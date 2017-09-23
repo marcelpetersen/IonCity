@@ -1,0 +1,21 @@
+page-activity,
+.activity {
+
+  .card {
+    overflow: hidden;
+
+    ion-item {
+      padding-left: 0;
+    }
+
+    .recommends {
+
+      span {
+
+        & + span:before {
+          content: ", ";
+        }
+      }
+    }
+  }
+}

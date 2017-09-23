@@ -1,0 +1,86 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title [hidden]="(searchBy != 1) || showTypes">Restaurants</ion-title>
+    <ion-title [hidden]="(searchBy != 2) || showTypes">Hotels</ion-title>
+    <ion-title [hidden]="(searchBy != 3) || showTypes">Attractions</ion-title>
+    <ion-input placeholder="Search: City or Place" [hidden]="!showTypes" autofocus></ion-input>
+    <ion-buttons [hidden]="showTypes" end>
+      <button ion-button (click)="showForm()">
+        <ion-icon name="search" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="search">
+  <ion-toolbar [hidden]="showTypes" color="white">
+    <span>All Cuisine, Popular Near Me</span>
+    <span class="pull-right" color="primary" (click)="showFilter()">Filter</span>
+  </ion-toolbar>
+
+  <!-- Show map here -->
+  <div id="map-search" [ngClass]="{'full-size': showFullMap}"></div>
+
+  <ion-list class="list-full-border items">
+    <ion-item *ngFor="let item of items" (click)="viewItem(item.id)">
+      <ion-thumbnail item-left>
+        <img src="{{ item.thumb }}">
+      </ion-thumbnail>
+      <div>
+        <span class="item-title bold">{{ item.name }}</span>
+        <span class="pull-right text-sm" color="gray">{{ item.location.distance }} km</span>
+      </div>
+      <div>
+        <ion-icon name="md-star" color="restaurant-color" *ngFor="let star of range(item.rating)"></ion-icon>
+        <ion-icon name="md-star" color="gray" *ngFor="let star of range(5 - item.rating)"></ion-icon>
+        <span class="text-sm" color="gray">{{ item.reviews.length }} reviews</span>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!--search category-->
+  <div class="modal-bg" [hidden]="!showTypes">
+
+    <ion-list class="search-cat list-full-border">
+      <ion-item (click)="search(2)">
+        <div class="thumb-bg hotel-bg pull-left" text-center>
+          <ion-icon name="home" color="light"></ion-icon>
+        </div>
+        <div class="pull-left">
+          <h2>Stay - Hotels</h2>
+          <span ion-text color="gray">Nearby</span>
+        </div>
+      </ion-item>
+      <ion-item (click)="search(1)">
+        <div class="thumb-bg restaurant-bg pull-left" text-center>
+          <ion-icon name="restaurant" color="light"></ion-icon>
+        </div>
+        <div class="pull-left">
+          <h2>Eat - Restaurants</h2>
+          <span ion-text color="gray">Nearby</span>
+        </div>
+      </ion-item>
+      <ion-item (click)="search(3)">
+        <div class="thumb-bg attraction-bg pull-left" text-center>
+          <ion-icon name="bicycle" color="light"></ion-icon>
+        </div>
+        <div class="pull-left">
+          <h2>Play - Attractions</h2>
+          <span ion-text color="gray">Nearby</span>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

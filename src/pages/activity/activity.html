@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="primary"></ion-icon>
+    </button>
+    <ion-title>Activity</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="activity common-bg">
+  <div class="card round" *ngFor="let activity of activities" margin-bottom>
+    <img src="{{ activity.image }}" alt="">
+    <!--place's info-->
+    <div padding>
+      <div>
+        <div class="pull-left">
+          <h6>
+            <ion-icon name="pin" color="primary"></ion-icon>
+            {{ activity.place.name }}
+          </h6>
+          <span ion-text color="gray">{{ activity.place.address }}</span>
+        </div>
+        <div class="pull-right">
+          <ion-icon name="heart" class="text-2x" [hidden]="!activity.is_liked" (click)="toggleLike(activity)"
+                    color="primary"></ion-icon>
+          <ion-icon name="ios-heart-outline" class="text-2x" [hidden]="activity.is_liked" (click)="toggleLike(activity)"
+                    color="primary"></ion-icon>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <!--user info-->
+      <ion-item class="no-border">
+        <ion-avatar item-left>
+          <img src="{{ activity.user.avatar }}" alt="">
+        </ion-avatar>
+        <div>
+          <span>{{ activity.user.username }}</span>
+        </div>
+        <div>
+          <ion-icon name="md-star" color="primary" *ngFor="let start of range(activity.rating)"></ion-icon>
+        </div>
+      </ion-item>
+
+      <div padding-bottom>
+        {{ activity.content }}
+      </div>
+
+      <span ion-text color="gray">Recommended for:</span>
+      <div class="recommends">
+        <span *ngFor="let item of activity.recommended_for" color="primary">{{ item.name }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

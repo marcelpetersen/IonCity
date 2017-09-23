@@ -1,0 +1,44 @@
+page-register,
+.register {
+
+  .middle-align {
+    height: auto;
+  }
+
+  .middle-align > div {
+    width: 96%;
+  }
+
+  ion-list {
+    background: none;
+
+    ion-item {
+      background: none;
+
+      ion-input {
+        margin-bottom: 1rem;
+        padding: 0 1.2rem;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.3);
+        color: color($colors, light);
+
+        input::-webkit-input-placeholder {
+          color: #AAA;
+        }
+      }
+
+      &.has-btn {
+        ion-label {
+          margin-right: 0;
+          margin-bottom: 0;
+
+          .item-button {
+            padding: 0 1em;
+            height: 2.8em;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}

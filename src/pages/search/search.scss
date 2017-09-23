@@ -1,0 +1,57 @@
+page-search,
+.search-page {
+  ion-navbar {
+    min-height: 50px;
+  }
+}
+
+.search {
+
+  #map-search {
+    width: 100%;
+    height: 20%;
+    transition: 200ms;
+
+    &.full-size {
+      height: 100%;
+    }
+  }
+
+  .items {
+
+    ion-thumbnail {
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .modal-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .search-cat {
+
+    ion-item {
+      padding-left: 12px;
+
+      .thumb-bg {
+        margin-right: 12px;
+        width: 60px;
+        height: 60px;
+
+        ion-icon {
+          line-height: 60px;
+          font-size: 5rem;
+        }
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

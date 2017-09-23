@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding class="register auth-bg">
+  <!--register form-->
+  <div class="middle-align">
+    <div>
+      <h3 ion-text color="light" border-color text-center>Create an account</h3>
+      <ion-list class="list-no-border">
+        <ion-item>
+          <ion-input type="text" placeholder="First Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Last Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Home City"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item class="has-btn" margin-top>
+          <button ion-button block color="primary" (click)="signUp()">Sign Up</button>
+        </ion-item>
+        <ion-item text-wrap>
+          <span ion-text color="light">By pressing Sign Up you agree with the</span>
+          <span ion-text color="primary">Terms of Service</span>
+          <span ion-text color="light">and</span>
+          <span ion-text color="primary">Privacy Policy</span>
+        </ion-item>
+        <ion-item class="has-btn">
+          <button ion-button color="gray" block (click)="login()">Already have an account?</button>
+        </ion-item>
+        <ion-item class="has-btn">
+          <button ion-button color="light" block>
+            <span gg-color>Sign in with Google</span>
+          </button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

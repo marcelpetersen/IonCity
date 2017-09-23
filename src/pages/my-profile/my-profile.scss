@@ -1,0 +1,28 @@
+page-my-profile,
+.my-profile {
+
+  ion-content {
+
+    .header {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    ion-grid {
+      padding: 0;
+
+      ion-col {
+        padding: 0;
+
+        & + ion-col {
+          border-left: 1px solid color($colors, border-color);
+        }
+
+        ion-list {
+          margin-bottom: 0;
+        }
+
+      }
+    }
+  }
+}

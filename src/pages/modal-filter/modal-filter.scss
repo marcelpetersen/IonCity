@@ -1,0 +1,16 @@
+page-modal-filter,
+.modal-filter {
+
+  .tag {
+    display: inline-block;
+    margin: 3px;
+    height: 2.2em;
+    border: 1px solid color($colors, primary);
+    color: color($colors, primary);
+  }
+
+  .stars {
+    font-size: 3rem;
+    margin: 5px;
+  }
+}
